@@ -14,27 +14,24 @@ namespace AdventOfCode2019Tests.Day1
         public void CalculateFuel_Part2_Test1()
         {
             var d = new AdventOfCode2019.Day1();
-            List<double> li = new List<double>();
-            d.CalculateFuel_Part2(14, ref li);
-            Assert.AreEqual(2, li.Sum());
+            var result = d.CalculateFuel_Part2(14, 0);
+            Assert.AreEqual(2, result);
         }
 
         [TestMethod]
         public void CalculateFuel_Part2_Test2()
         {
             var d = new AdventOfCode2019.Day1();
-            List<double> li = new List<double>();
-            d.CalculateFuel_Part2(1969, ref li);
-            Assert.AreEqual(966, li.Sum());
+            var result = d.CalculateFuel_Part2(1969, 0);
+            Assert.AreEqual(966, result);
         }
 
         [TestMethod]
         public void CalculateFuel_Part2_Test3()
         {
             var d = new AdventOfCode2019.Day1();
-            List<double> li = new List<double>();
-            d.CalculateFuel_Part2(100756, ref li);
-            Assert.AreEqual(50346, li.Sum());
+            var result = d.CalculateFuel_Part2(100756, 0);
+            Assert.AreEqual(50346, result);
         }
     }
 }

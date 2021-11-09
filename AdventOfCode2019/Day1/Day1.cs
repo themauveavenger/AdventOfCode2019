@@ -15,18 +15,17 @@ namespace AdventOfCode2019
             return Math.Floor(mass / 3) - 2;
         }
 
-        public void CalculateFuel_Part2(double mass, ref List<double> calculatedMasses)
+        public double CalculateFuel_Part2(double mass, double total)
         {
             var fuel = CalculateFuel(mass);
             if (fuel < 0)
             {
-                // we're done, return everything
-                return;
+                // we're done return the total
+                return total;
             } else
             {
-                // add the calculated fuel to the list, send it down 
-                calculatedMasses.Add(fuel);
-                CalculateFuel_Part2(fuel, ref calculatedMasses);
+                total += fuel;
+                return CalculateFuel_Part2(fuel, total);
             }
         }
 
@@ -45,9 +44,8 @@ namespace AdventOfCode2019
             double totalFuel = 0;
             foreach (var line in input)
             {
-                var fuel = new List<double>();
-                CalculateFuel_Part2(Convert.ToDouble(line), ref fuel);
-                totalFuel += fuel.Sum();
+                var total = CalculateFuel_Part2(Convert.ToDouble(line), 0);
+                totalFuel += total;
             }
 
             Console.WriteLine($"part 2 --- total fuel: {totalFuel}");
