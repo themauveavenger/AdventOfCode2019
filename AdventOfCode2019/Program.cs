@@ -6,10 +6,8 @@ namespace AdventOfCode2019
     {
         static void Main(string[] args)
         {
-            var d1 = new Day1();
-            d1.Run();
-
-            d1.Run_Part2(); 
+            var d2 = new Day2();
+            d2.Run();
         }
     }
 }
